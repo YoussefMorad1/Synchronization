@@ -5,26 +5,14 @@ public class Router {
     final HashSet<Integer> connectionIds;
 
     public Router(int maxConnections) {
-        connections = new Semaphore(maxConnections);
-        connectionIds = new HashSet<>();
-        for (int i = 1; i <= maxConnections; i++) {
-            connectionIds.add(i);
-        }
+        // TODO: Initialize connections and connectionIds
     }
 
     public void addConnection(Device d) {
-        connections.P(d);
-
-        // synchronized used to avoid getting the same connectionId for two devices
-        synchronized (connectionIds) {
-            int connectionId = connectionIds.iterator().next();
-            connectionIds.remove(connectionId);
-            d.setConnectionId(connectionId);
-        }
+        // TODO: Add connection to the router, use semaphore to limit the number of connections
     }
 
     public void removeConnection(Device d) {
-        connectionIds.add(d.connectionId);
-        connections.V();
+        // TODO: Remove connection from the router, use semaphore to update the number of connections
     }
 }

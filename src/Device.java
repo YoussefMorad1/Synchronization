@@ -11,9 +11,7 @@ public class Device extends Thread {
     }
 
     public void connect() {
-        router.addConnection(this);
-        System.out.println("Connection " + connectionId + ": " + name + " Occupied");
-        System.out.println("Connection " + connectionId + ": " + name + " login");
+        // TODO: Connect to the router using router.addConnection() and print that you are connected
     }
 
     public void doActivity() {
@@ -21,8 +19,7 @@ public class Device extends Thread {
     }
 
     public void disconnect() {
-        System.out.println("Connection " + connectionId + ": " + name + " logout");
-        router.removeConnection(this);
+        // TODO: Disconnect from the router using router.removeConnection() and print that you are disconnected
     }
 
     public void setConnectionId(int connectionId) {
