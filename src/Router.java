@@ -45,7 +45,7 @@ public class Router {
 
         //ensure that only one thread can modify the connectionIds set at a time
         synchronized (connectionIds) {
-            connectionIds.remove(d.connectionId);
+            connectionIds.add(d.connectionId);
         }
         connections.V();
         // indicates that a connection has been released and can now be acquired by another device.
