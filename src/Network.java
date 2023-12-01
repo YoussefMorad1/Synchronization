@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Network {
+class Network {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -26,14 +26,21 @@ public class Network {
             devices[i] = new Device(name, type, router);
         }
 
+        // Redirect output to a text file
+        File outputFile = new File("output.txt");
+        try {
+            PrintStream fileStream = new PrintStream(outputFile);
+            System.setOut(fileStream);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
         // Start threads for each device
         for (Device device : devices) {
             device.start();
         }
-
         //This ensures that the main thread doesn't exit until all the device threads have finished executing.
         for (Device device : devices) {
-
             //join() method can throw this exception if the thread is interrupted while waiting for the device thread to finish
             try {
                 device.join();
@@ -41,7 +48,6 @@ public class Network {
                 e.printStackTrace();
             }
         }
-
         scanner.close();
     }
 }
