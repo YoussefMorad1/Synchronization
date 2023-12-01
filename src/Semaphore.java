@@ -1,4 +1,4 @@
-public class Semaphore {
+class Semaphore {
     private int value;
 
     public Semaphore(int value) {
@@ -14,7 +14,8 @@ public class Semaphore {
             } catch (InterruptedException e) {
                 System.out.println("Semaphore.P() interrupted");
             }
-        } else
+        }
+        else
             System.out.println(d.name + " (" + d.type + ") arrived");
     }
 
