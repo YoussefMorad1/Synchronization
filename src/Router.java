@@ -1,6 +1,6 @@
 import java.util.HashSet;
 
-public class Router {
+class Router {
     Semaphore connections;
     final HashSet<Integer> connectionIds;
 
@@ -14,9 +14,7 @@ public class Router {
             connectionIds.add( i );
 
         }
-
     }
-
     //// Add connection to the router, use semaphore to limit the number of connections
     public void addConnection(Device d) {
         //call  wait to check for available connections and wait if there are no available connections until a permit is available.
@@ -36,10 +34,7 @@ public class Router {
             d.setConnectionId( connectionId );  //removes it from the set, and assigns it to the device d.
 
         }
-
-
     }
-
     /// Remove connection from the router, use semaphore to update the number of connections
     public void removeConnection(Device d) {
 
@@ -49,6 +44,5 @@ public class Router {
         }
         connections.V();
         // indicates that a connection has been released and can now be acquired by another device.
-
     }
 }
