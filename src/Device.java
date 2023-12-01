@@ -1,4 +1,4 @@
-public class Device extends Thread {
+class Device extends Thread {
     String name;
     String type;
     Router router;
@@ -13,7 +13,6 @@ public class Device extends Thread {
     // Connect to the router
     public void connect() {
         router.addConnection(this); // add connection to the router
-        System.out.println("- (" + name + ")(" + type + ") arrived"); // print that the device arrived
         System.out.println("- Connection " + connectionId + ": " + name + " Occupied"); // print that the device is connected
     }
     // Simulate online activity
