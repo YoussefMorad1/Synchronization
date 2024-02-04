@@ -39,6 +39,7 @@ C4 pc
 - Connection 1: C4 performs online activity
 - Connection 2: C2 Logged out
 - Connection 2: C3 Occupied
+``` 
 
 ## Dependencies 
 This CLI project is implemented in Java and does not require any external dependencies beyond the standard Java libraries.
