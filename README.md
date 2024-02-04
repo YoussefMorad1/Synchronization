@@ -13,6 +13,7 @@ This is a Java project that simulates a Wi-Fi router using threading and semapho
 • Network Class: Contains the main method where the user is prompted for inputs such as the maximum number of connections a router can accept (N) and the total number of devices wishing to connect (TC).
 
 ### Sample Input
+```java
 What is the number of WI-FI Connections?
 2
 What is the number of devices Clients want to connect?
@@ -21,6 +22,8 @@ C1 mobile
 C2 tablet
 C3 pc
 C4 pc
+```
+
 ### Sample Output
 ```java 
 - (C1)(mobile)arrived
